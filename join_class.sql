@@ -39,28 +39,37 @@ commit;
 
 -- Inner Join Query
 Select t1.Customer_id, t1.Customer_name, t1.city, t2.Product_name, t2.Price
-From Customer t1 Inner Join Product t2 on t1.Customer_id = t2.Customer_id
+From Customer t1 Inner Join Product t2
+on t1.Customer_id = t2.Customer_id
 
 -- Left Join Query
 select t1.customer_id, t1.customer_name,t1.country,t2.product_name,t2.Category
-from customer t1 left join product t2 on t1.Customer_id = t2.Customer_id
+from customer t1 left join product t2
+on t1.Customer_id = t2.Customer_id
 
 -- Right Join Query
 select t1.customer_id, t1.customer_name,t1.country,t2.product_name,t2.Category
-from customer t1 right join product t2 on t1.Customer_id = t2.Customer_id;
+from customer t1 right join product t2 
+    on t1.Customer_id = t2.Customer_id;
 
 -- Full Outer Join Query
 select t1.customer_id, t1.customer_name,t1.country,t2.product_name,t2.price
-from customer t1 full outer join product t2 on t1.Customer_id = t2.Customer_id
+from customer t1 full outer join product t2 
+    on t1.Customer_id = t2.Customer_id
 
 -- Left Outer Join Query
 select t1.customer_id, t1.customer_name,t1.country,t2.product_name,t2.Category, t2.price
-from customer t1 left outer join product t2 on t1.Customer_id = t2.Customer_id
+from customer t1 left outer join product t2 
+    on t1.Customer_id = t2.Customer_id
 
 -- Right Outer Join Query
 select t1.customer_id, t1.customer_name,t1.country,t2.product_name,t2.Category, t2.price
-from customer t1 right outer join product t2 on t1.Customer_id = t2.Customer_id
+from customer t1 right outer join product t2 
+    on t1.Customer_id = t2.Customer_id
 
 -- Symmetric Difference Query
 Select t1.customer_id, t1.customer_name, t1.country, t2.product_name, t2.category
-from customer t1 full outer join product t2 on t1.customer_id = t2.customer_id where t1.customer_id is null or t2.customer_id is null
+
+from customer t1 full outer join product t2 
+    on t1.customer_id = t2.customer_id 
+    where t1.customer_id is null or t2.customer_id is null
